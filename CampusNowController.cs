@@ -24,7 +24,7 @@ namespace UASafety.Refactor.DataAccess.Controllers
     {
         [HttpGet]
         //User Stories
-        //AB001: Get contact groups attached to the about page
+        //CN001: Get contact groups attached to the Campus Now page
         public IActionResult GetAttachedContactGroups()
         {
             Console.WriteLine("Fetching all contact groups attached to the About page...");
@@ -32,7 +32,7 @@ namespace UASafety.Refactor.DataAccess.Controllers
         }
         [HttpGet]
         //User Stories
-        //AB001: Get contacts attached to the about page
+        //CN001: Get contacts attached to the Campus Now page
         public IActionResult GetAttachedContacts()
         {
             Console.WriteLine("Fetching all contacts attached to the About page...");
@@ -40,8 +40,8 @@ namespace UASafety.Refactor.DataAccess.Controllers
         }
         [HttpPut("{id}")]
         //User Stories
-        //AB001: Update contact group
-        //AB002: Specify that contact group is to appear on the About page
+        //CN001: Update contact group
+        //CN002: Specify that contact group is to appear on the Campus Now page
         public IActionResult UpdateContactGroup(ContactsGrouping grouping)
         {
             Console.WriteLine($"Updating contact group {grouping}");
@@ -49,8 +49,8 @@ namespace UASafety.Refactor.DataAccess.Controllers
         }
         [HttpPut("{id}")]
         //User Stories
-        //AB001: Update contact
-        //AB002: Specify that contact is to appear on the About page
+        //CN001: Update contact
+        //CN002: Specify that contact is to appear on the Campus Now page
 
         public IActionResult UpdateContact(Contacts contact)
         {
@@ -59,8 +59,8 @@ namespace UASafety.Refactor.DataAccess.Controllers
         }
         [HttpPost]
         //User Stories
-        //AB001: Add contact group
-        //AB002: Specify that contact group is to appear on the About page
+        //CN001: Add contact group
+        //CN002: Specify that contact group is to appear on the Campus Now page
 
         public IActionResult AddContactGroup(ContactsGrouping grouping)
         {
@@ -69,8 +69,8 @@ namespace UASafety.Refactor.DataAccess.Controllers
         }
         [HttpPost]
         //User Stories
-        //AB001: Add contact
-        //AB002: Specify that contact is to appear on the About page
+        //CN001: Add contact
+        //CN002: Specify that contact is to appear on the Campus Now page
         public IActionResult AddContact(Contacts contact)
         {
             Console.WriteLine($"Adding contact {contact}");
@@ -78,7 +78,7 @@ namespace UASafety.Refactor.DataAccess.Controllers
         }
         [HttpDelete("{id}")]
         //User Stories
-        //AB001: Delete contact group
+        //CN001: Delete contact group
         public IActionResult DeleteContactGroup(int id)
         {
             Console.WriteLine($"Deleting contact group with ID {id}");
@@ -86,43 +86,11 @@ namespace UASafety.Refactor.DataAccess.Controllers
         }
         [HttpDelete("{id}")]
         //User Stories
-        //AB001: Delete Contact
+        //CN001: Delete Contact
         public IActionResult DeleteContact(int id)
         {
             Console.WriteLine($"Deleting contact with ID {id}");
             return Ok($"Successfully deleted contact with ID {id}");
-        }
-        [HttpPost]
-        //User Stories
-        //AB003: Create new About content
-        public IActionResult CreateAboutContent()
-        {
-            Console.WriteLine("Creating new About content...");
-            return Ok("Successfully created new About content");
-        }
-        [HttpGet]
-        //User Stories
-        //AB003: Get About content
-        public IActionResult GetAboutContent()
-        {
-            Console.WriteLine("Fetching About content...");
-            return Ok("Successfully retrieved About content");
-        }
-        [HttpPut]
-        //User Stories
-        //AB003: Update About content
-        public IActionResult UpdateAboutContent()
-        {
-            Console.WriteLine("Updating About content...");
-            return Ok("Successfully updated About content");
-        }
-        [HttpDelete]
-        //User Stories
-        //AB003: Delete About content
-        public IActionResult DeleteAboutContent()
-        {
-            Console.WriteLine("Deleting About content...");
-            return Ok("Successfully deleted About content");
         }
     }
 }

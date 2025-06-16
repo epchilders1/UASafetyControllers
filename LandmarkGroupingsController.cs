@@ -19,6 +19,7 @@ using ControllerBase = Microsoft.AspNetCore.Mvc.ControllerBase;
 namespace UASafety.Refactor.DataAccess.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("v1/[controller]")]
     internal class LandmarkGroupingsController : ControllerBase
     {

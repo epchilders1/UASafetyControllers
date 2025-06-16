@@ -86,5 +86,59 @@ namespace UASafety.Refactor.DataAccess.Controllers
             return Ok($"Amenities for landmark with ID {landmarkId} retrieved successfully.");
         }
 
+        //LandmarkImages section
+
+        [HttpPost("{landmarkId}")]
+        //User Stories
+        //LM003: Create LandmarkImage
+        public IActionResult CreateLandmarkImage(int landmarkId, [FromBody] byte[] image)
+        {
+            Console.WriteLine($"Creating landmark image for building ID: {landmarkId}");
+            return Ok($"Created Landmark Image for Building ID {landmarkId}");
+        }
+        [HttpGet("{landmarkId}")]
+        //User Stories
+        //LM003: Get all LandmarkImages for a certain landmark
+        public IActionResult GetAllLandmarkImagesById(int landmarkId)
+        {
+            Console.WriteLine($"Getting all landmark images for landmark with id {landmarkId}");
+            return Ok($"All landmark images retrieved successfully for landmark with id {landmarkId}");
+        }
+        [HttpDelete("{imageId}")]
+        //User Stories
+        //LM003: Delete LandmarkImage
+        public IActionResult DeleteLandmarkImage(int imageId)
+        {
+            Console.WriteLine($"Deleting landmark image with ID: {imageId}");
+            return Ok($"Deleted Landmark Image with ID {imageId}");
+        }
+
+        //LandmarkImageThumbnails section
+
+        [HttpPost("{buildingId}")]
+        //User Stories
+        //LM003: Create LandmarkImageThumbnail
+        public IActionResult CreateLandmarkImageThumbnail(int buildingId, [FromBody] byte[] thumbnail)
+        {
+            Console.WriteLine($"Creating landmark image thumbnail with building ID: {buildingId}");
+            return Ok($"Created Landmark Image Thumbnail with building ID {buildingId}");
+        }
+        [HttpGet("{landmarkId}")]
+        //User Stories
+        //LM003: Get LandmarkImageThumbnails by building ID
+        public IActionResult GetLandmarkImageThumbnailsByBuildingId(int landmarkId)
+        {
+            Console.WriteLine($"Getting landmark image thumbnails for building ID: {landmarkId}");
+            return Ok($"Landmark Image Thumbnails for Building ID {landmarkId} retrieved successfully.");
+        }
+        [HttpDelete("{thumbnailId}")]
+        //User Stories
+        //LM003: Delete LandmarkImageThumbnail
+        public IActionResult DeleteLandmarkImageThumbnail(int thumbnailId)
+        {
+            Console.WriteLine($"Deleting landmark image thumbnail with ID: {thumbnailId}");
+            return Ok($"Deleted Landmark Image Thumbnail with ID {thumbnailId}");
+        }
     }
 }
+
