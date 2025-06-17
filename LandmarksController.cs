@@ -27,6 +27,8 @@ namespace UASafety.Refactor.DataAccess.Controllers
     public class LandmarksController : ControllerBase
     {
         [HttpGet]
+        //LM008 Get all landmarks to filter/search through them
+        //LM009 Get all landmarks to display them as pins on a map
         public IActionResult GetAllLandmarks()
         {
             Console.WriteLine("Getting all landmarks...");
